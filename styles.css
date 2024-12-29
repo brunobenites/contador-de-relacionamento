@@ -40,8 +40,8 @@ body {
 /* As imagens no carrossel */
 .images img {
     width: 250px; /* Ajuste o tamanho das imagens */
-    height: auto; /* Mantém a proporção da imagem */
-    object-fit: cover;
+    height: auto; /* Mantém a proporção das imagens */
+    object-fit: contain; /* Mantém a imagem intacta, sem cortar, mas ajustando a largura */
     margin: 0 10px; /* Espaçamento entre as imagens */
     border-radius: 10px; /* Bordas arredondadas */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para dar um efeito visual legal */

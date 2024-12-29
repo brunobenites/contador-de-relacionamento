@@ -8,10 +8,10 @@ body {
     text-align: center;
 }
 
-/* Centraliza o título e o tempo */
+/* Centraliza o conteúdo na página */
 #container {
+    margin-top: 50px; /* Adiciona algum espaço no topo */
     text-align: center;
-    margin-top: 100px; /* Dê um espaço entre o topo da página e o conteúdo */
 }
 
 /* Título */
@@ -30,21 +30,21 @@ body {
 
 /* Carrossel de imagens */
 .image-slider {
-    margin-top: 20px; /* Espaço acima do carrossel */
+    margin-top: 20px;
     display: flex;
     justify-content: center; /* Centraliza as imagens */
     overflow: hidden;
     position: relative;
 }
 
-/* Aplique as imagens no carrossel */
+/* As imagens no carrossel */
 .images img {
-    width: 300px; /* Ajuste o tamanho das imagens para 300px de largura */
-    height: auto; /* Manter a proporção da imagem */
+    width: 250px; /* Ajuste o tamanho das imagens */
+    height: auto; /* Mantém a proporção da imagem */
     object-fit: cover;
-    margin: 0 10px; /* Espaço entre as imagens */
-    border-radius: 10px; /* Bordas arredondadas, se necessário */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para dar um efeito legal */
+    margin: 0 10px; /* Espaçamento entre as imagens */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para dar um efeito visual legal */
 }
 
 /* Para os corações subindo */

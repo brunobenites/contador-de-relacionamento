@@ -1,15 +1,15 @@
 // Função para calcular o tempo desde uma data específica
 function calcularTempo() {
-    const dataInicio = new Date('2024-07-05T20:00:00'); // Data e hora de início
+    const dataInicio = new Date('2024-07-05T20:00:00'); // Data e hora de início (05/07/2024 às 20:00)
     const agora = new Date();
-    const tempoEmMilissegundos = agora - dataInicio;
+    const tempoEmMilissegundos = agora - dataInicio; // Calcula a diferença de tempo em milissegundos
     
-    // Calcular total de segundos, minutos, horas e dias
+    // Calcular o total de segundos, minutos, horas, dias e meses
     const segundosTotais = Math.floor(tempoEmMilissegundos / 1000); // Total de segundos
     const segundos = segundosTotais % 60; // Segundos
     const minutos = Math.floor(segundosTotais / 60) % 60; // Minutos
     const horas = Math.floor(segundosTotais / 3600) % 24; // Horas
-    const dias = Math.floor(segundosTotais / (1000 * 60 * 60 * 24)) % 30; // Dias (aproximadamente 30 dias por mês)
+    const dias = Math.floor(segundosTotais / (1000 * 60 * 60 * 24)) % 30; // Dias
     const meses = Math.floor(segundosTotais / (1000 * 60 * 60 * 24 * 30)); // Meses
 
     // Exibe o tempo formatado

@@ -31,20 +31,33 @@ body {
 /* Carrossel de imagens */
 .image-slider {
     margin-top: 20px;
-    display: flex;
-    justify-content: center; /* Centraliza as imagens */
-    overflow: hidden;
     position: relative;
+    width: 250px; /* Defina uma largura fixa para o carrossel */
+    height: auto;
+    overflow: hidden;
+    margin: 0 auto; /* Centraliza o carrossel */
 }
 
-/* As imagens no carrossel */
+/* As imagens dentro do carrossel */
+.images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
 .images img {
     width: 250px; /* Ajuste o tamanho das imagens */
-    height: auto; /* Mantém a proporção das imagens */
-    object-fit: contain; /* Mantém a imagem intacta, sem cortar, mas ajustando a largura */
-    margin: 0 10px; /* Espaçamento entre as imagens */
-    border-radius: 10px; /* Bordas arredondadas */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para dar um efeito visual legal */
+    height: auto; /* Mantém a proporção */
+    object-fit: contain; /* Não corta, mantém a proporção */
+    display: none; /* Inicia com as imagens invisíveis */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
 }
 
 /* Para os corações subindo */

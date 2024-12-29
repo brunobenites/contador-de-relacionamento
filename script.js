@@ -10,13 +10,14 @@ function updateTime() {
   const years = Math.floor(timeDifference / (1000 * 60 * 60 * 24 * 365));
   const months = Math.floor((timeDifference % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
   const days = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const hours = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60 * 60));
   const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
+  // Preparar a string de tempo com base nas unidades
   let timeString = '';
 
-  // Exibir o tempo conforme o ano, mês, ou dia
+  // Exibir os anos, meses, dias, horas, minutos, e segundos
   if (years > 0) {
     timeString += `${years} ano${years > 1 ? 's' : ''}, `;
   }

@@ -21,13 +21,6 @@ body {
     margin-bottom: 20px;
 }
 
-/* Exibe o tempo calculado */
-#time {
-    font-size: 24px;
-    font-weight: normal;
-    margin-top: 20px;
-}
-
 /* Carrossel de imagens */
 .image-slider {
     margin-top: 20px;
@@ -59,6 +52,14 @@ body {
 /* Para a imagem visível */
 .images img.active {
     display: block; /* Apenas a imagem ativa será visível */
+}
+
+/* Exibe o tempo calculado abaixo da imagem */
+#time {
+    font-size: 24px;
+    font-weight: normal;
+    margin-top: 20px;
+    color: #fff; /* Para garantir que o texto do tempo apareça visível */
 }
 
 /* Para os corações subindo */

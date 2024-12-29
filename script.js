@@ -1,34 +1,48 @@
-// Definir o momento inicial (05/07/2024, 20:00)
-const startDate = new Date('2024-07-05T20:00:00');
-
-// Função para calcular o tempo decorrido
+// JavaScript para calcular o tempo desde 05/07/2024 às 20:00 até o momento atual
 function updateTime() {
-  const currentDate = new Date();
-  const timeDifference = currentDate - startDate; // diferença em milissegundos
-  
-  // Calcular anos, meses, dias, horas, minutos e segundos
-  const years = Math.floor(timeDifference / (1000 * 60 * 60 * 24 * 365));
-  const months = Math.floor((timeDifference % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
-  const days = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60 * 60));
-  const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+    const startDate = new Date('2024-07-05T20:00:00'); // Data inicial
+    const currentDate = new Date(); // Data atual
+    const diff = currentDate - startDate; // Diferença em milissegundos
 
-  // Preparar a string de tempo com base nas unidades
-  let timeString = '';
+    // Calculando anos, meses, dias, horas, minutos e segundos
+    let years = currentDate.getFullYear() - startDate.getFullYear();
+    let months = currentDate.getMonth() - startDate.getMonth();
+    let days = currentDate.getDate() - startDate.getDate();
+    let hours = currentDate.getHours() - startDate.getHours();
+    let minutes = currentDate.getMinutes() - startDate.getMinutes();
+    let seconds = currentDate.getSeconds() - startDate.getSeconds();
 
-  // Exibir o tempo conforme o ano, mês, ou dia
-  if (years > 0) {
-    timeString += `${years} ano${years > 1 ? 's' : ''}, `;
-  }
-  if (months > 0 || years > 0) {
-    timeString += `${months} mês${months > 1 ? 'es' : ''}, `;
-  }
-  timeString += `${days} dia${days > 1 ? 's' : ''}, ${hours} hora${hours > 1 ? 's' : ''}, ${minutes} minuto${minutes > 1 ? 's' : ''}, ${seconds} segundo${seconds > 1 ? 's' : ''}`;
+    // Corrigir a diferença para meses e anos
+    if (months < 0) {
+        months += 12;
+        years--;
+    }
 
-  // Atualizar o conteúdo do timer
-  document.getElementById('timer').textContent = timeString;
+    if (days < 0) {
+        const lastMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0);
+        days += lastMonth.getDate();
+        months--;
+    }
+
+    if (hours < 0) {
+        hours += 24;
+        days--;
+    }
+
+    if (minutes < 0) {
+        minutes += 60;
+        hours--;
+    }
+
+    if (seconds < 0) {
+        seconds += 60;
+        minutes--;
+    }
+
+    // Atualizando o conteúdo da página com o tempo
+    document.getElementById('time').textContent = `Tempo juntos: ${years} anos, ${months} meses, ${days} dias, ${hours} horas, ${minutes} minutos, ${seconds} segundos`;
 }
 
-// Atualizar a cada segundo
+// Atualiza o tempo a cada segundo
 setInterval(updateTime, 1000);
+updateTime(); // Chama a função para inicializar o tempo ao carregar a página

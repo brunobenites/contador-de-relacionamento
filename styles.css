@@ -1,25 +1,52 @@
-/* Estilo geral da página */
+/* CSS */
 body {
-  background-color: #000000; /* Fundo preto */
-  color: white; /* Texto branco */
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
+    background-color: black; /* Fundo preto */
+    color: white; /* Texto branco */
+    font-family: Arial, sans-serif; /* Fonte */
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    height: 100vh; /* Altura da tela */
+    margin: 0; /* Remove margens */
+    text-align: center; /* Texto centralizado */
 }
 
-.container {
-  text-align: center;
+#container {
+    max-width: 800px;
+    position: relative;
 }
 
-h1 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+#time {
+    font-size: 2rem; /* Tamanho do texto */
+    margin-bottom: 20px; /* Espaço abaixo do tempo */
 }
 
-#timer {
-  font-size: 2.5rem;
-  font-weight: bold;
+.image-slider {
+    width: 100%;
+    height: 400px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden; /* Esconde o que ultrapassar o contêiner */
+}
+
+.images {
+    display: flex; /* Exibe as imagens em linha */
+    width: 500%;
+    animation: slide 25s infinite; /* Animação de transição das imagens */
+}
+
+.images img {
+    width: 20%;
+    height: 100%;
+    object-fit: cover; /* Ajusta as imagens sem distorção */
+}
+
+/* Animação das imagens alternando */
+@keyframes slide {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-100%); }
+    40% { transform: translateX(-200%); }
+    60% { transform: translateX(-300%); }
+    80% { transform: translateX(-400%); }
+    100% { transform: translateX(0); }
 }

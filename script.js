@@ -4,7 +4,7 @@ const totalImages = images.length; // Total de imagens
 
 // Função para mostrar a imagem atual e esconder as outras
 function showImage(index) {
-    // Remover a classe 'active' de todas as imagens
+    // Remove a classe 'active' de todas as imagens
     images.forEach(img => img.classList.remove('active'));
     
     // Adiciona a classe 'active' à imagem atual

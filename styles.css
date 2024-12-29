@@ -33,9 +33,9 @@ body {
     margin-top: 20px;
     position: relative;
     width: 250px; /* Defina uma largura fixa para o carrossel */
-    height: auto;
-    overflow: hidden;
+    height: 250px; /* Defina uma altura fixa */
     margin: 0 auto; /* Centraliza o carrossel */
+    overflow: hidden;
 }
 
 /* As imagens dentro do carrossel */
@@ -49,15 +49,19 @@ body {
 
 .images img {
     width: 250px; /* Ajuste o tamanho das imagens */
-    height: auto; /* Mantém a proporção */
-    object-fit: contain; /* Não corta, mantém a proporção */
-    display: none; /* Inicia com as imagens invisíveis */
+    height: 250px; /* Ajuste a altura das imagens */
+    object-fit: cover; /* Ajusta a imagem para não distorcer */
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    margin: 0;
+    display: none; /* Todas as imagens começam invisíveis */
+}
+
+/* Exibição da imagem ativa */
+.images img.active {
+    display: block; /* Apenas a imagem com a classe 'active' será visível */
 }
 
 /* Para os corações subindo */

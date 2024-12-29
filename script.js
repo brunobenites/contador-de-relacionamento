@@ -4,13 +4,15 @@ function calcularTempo() {
     const agora = new Date();
     const tempoEmMilissegundos = agora - dataInicio;
     
-    const segundos = Math.floor(tempoEmMilissegundos / 1000);
-    const minutos = Math.floor(segundos / 60);
-    const horas = Math.floor(minutos / 60);
-    const dias = Math.floor(horas / 24);
-    const meses = Math.floor(dias / 30); // Aproximação de meses
+    const segundosTotais = Math.floor(tempoEmMilissegundos / 1000); // Total de segundos
+    const segundos = segundosTotais % 60; // Segundos
+    const minutos = Math.floor(segundosTotais / 60) % 60; // Minutos
+    const horas = Math.floor(segundosTotais / 3600) % 24; // Horas
+    const dias = Math.floor(segundosTotais / (1000 * 60 * 60 * 24)) % 30; // Dias (aproximadamente 30 dias por mês)
+    const meses = Math.floor(segundosTotais / (1000 * 60 * 60 * 24 * 30)); // Meses
 
-    const tempoJuntos = `${meses} meses e ${dias % 30} dias`; // Exibe meses e dias
+    // Exibe o tempo formatado
+    const tempoJuntos = `${meses} meses, ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos`;
     document.getElementById('time').innerText = tempoJuntos;
 }
 

@@ -40,7 +40,7 @@ function updateTime() {
     }
 
     // Atualizando o conteúdo da página com o tempo
-    document.getElementById('time').textContent = `Tempo juntos: ${years} anos, ${months} meses, ${days} dias, ${hours} horas, ${minutes} minutos, ${seconds} segundos`;
+    document.getElementById('time').textContent = `Estamos juntos há: ${years} anos, ${months} meses, ${days} dias, ${hours} horas, ${minutes} minutos, ${seconds} segundos`;
 }
 
 // Atualiza o tempo a cada segundo

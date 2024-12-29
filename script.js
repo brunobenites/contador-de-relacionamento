@@ -4,6 +4,7 @@ function calcularTempo() {
     const agora = new Date();
     const tempoEmMilissegundos = agora - dataInicio;
     
+    // Calcular total de segundos, minutos, horas e dias
     const segundosTotais = Math.floor(tempoEmMilissegundos / 1000); // Total de segundos
     const segundos = segundosTotais % 60; // Segundos
     const minutos = Math.floor(segundosTotais / 60) % 60; // Minutos

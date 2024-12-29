@@ -46,3 +46,25 @@ function updateTime() {
 // Atualiza o tempo a cada segundo
 setInterval(updateTime, 1000);
 updateTime(); // Chama a função para inicializar o tempo ao carregar a página
+
+// Função para gerar os corações subindo
+function generateHearts() {
+    const heartsContainer = document.getElementById('hearts');
+    const heartCount = 20; // Número de corações a serem gerados
+
+    for (let i = 0; i < heartCount; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.innerHTML = '❤️';
+        
+        // Definindo posições aleatórias
+        heart.style.left = `${Math.random() * 100}vw`; // Posição horizontal
+        heart.style.animationDuration = `${Math.random() * 3 + 2}s`; // Duração da animação de 2 a 5 segundos
+        heart.style.animationDelay = `${Math.random() * 5}s`; // Atraso na animação
+
+        heartsContainer.appendChild(heart);
+    }
+}
+
+// Gera corações assim que a página carrega
+window.onload = generateHearts;

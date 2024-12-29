@@ -4,8 +4,8 @@ const startDate = new Date('2024-07-05T20:00:00');
 // Função para calcular o tempo decorrido
 function updateTime() {
   const currentDate = new Date();
-  const timeDifference = currentDate - startDate;
-
+  const timeDifference = currentDate - startDate; // diferença em milissegundos
+  
   // Calcular anos, meses, dias, horas, minutos e segundos
   const years = Math.floor(timeDifference / (1000 * 60 * 60 * 24 * 365));
   const months = Math.floor((timeDifference % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
@@ -17,7 +17,7 @@ function updateTime() {
   // Preparar a string de tempo com base nas unidades
   let timeString = '';
 
-  // Exibir os anos, meses, dias, horas, minutos, e segundos
+  // Exibir o tempo conforme o ano, mês, ou dia
   if (years > 0) {
     timeString += `${years} ano${years > 1 ? 's' : ''}, `;
   }

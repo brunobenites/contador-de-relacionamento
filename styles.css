@@ -1,0 +1,25 @@
+/* Estilo geral da página */
+body {
+  background-color: #000000; /* Fundo preto */
+  color: white; /* Texto branco */
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+#timer {
+  font-size: 2.5rem;
+  font-weight: bold;
+}

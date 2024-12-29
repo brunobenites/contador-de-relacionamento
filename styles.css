@@ -1,29 +1,95 @@
-/* CSS para o efeito de corações subindo */
-@keyframes subirCoracao {
+/* Estilo global */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Centraliza o conteúdo na página */
+#container {
+    margin-top: 50px;
+    text-align: center;
+}
+
+/* Título */
+#title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Carrossel de imagens */
+.image-slider {
+    margin-top: 20px;
+    position: relative;
+    width: 250px; /* Largura das imagens */
+    height: 250px; /* Altura das imagens */
+    margin: 0 auto; /* Centraliza o carrossel */
+    overflow: hidden;
+}
+
+/* As imagens dentro do carrossel */
+.images {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilo para cada imagem dentro do carrossel */
+.images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* A imagem preencherá o container sem distorção */
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none; /* Inicialmente, todas as imagens ficam invisíveis */
+}
+
+/* Para a imagem visível */
+.images img.active {
+    display: block; /* Apenas a imagem ativa será visível */
+}
+
+/* Exibe o tempo calculado abaixo da imagem */
+#time {
+    font-size: 24px;
+    font-weight: normal;
+    margin-top: 20px;
+    color: #fff; /* Para garantir que o texto do tempo apareça visível */
+}
+
+/* Para os corações subindo */
+#hearts {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes heart-animation {
     0% {
-        transform: translateY(100%); /* Começa fora da tela */
         opacity: 1;
+        transform: translateY(0) scale(1);
     }
     100% {
-        transform: translateY(-100vh); /* Move para fora da tela (acima) */
         opacity: 0;
+        transform: translateY(-200px) scale(1.5);
     }
 }
 
-.coração {
+/* Animação dos corações */
+#hearts::before {
+    content: "❤️";
+    font-size: 30px;
+    animation: heart-animation 4s infinite;
+    animation-timing-function: ease-in-out;
     position: absolute;
-    bottom: -50px;
-    font-size: 2rem;
-    color: red;
-    animation: subirCoracao 5s linear infinite; /* Animação para o coração subir */
-    pointer-events: none;
-}
-
-/* Efeito para o contador de tempo */
-#time {
-    color: white;
-    font-size: 2rem;
-    margin-top: 20px;
-    text-align: center;
-    font-family: Arial, sans-serif;
+    left: 50%;
+    transform: translateX(-50%);
 }

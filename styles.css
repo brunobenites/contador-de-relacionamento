@@ -16,41 +16,67 @@ body {
     position: relative;
     width: 100%;
     max-width: 800px; /* Define uma largura máxima para o conteúdo */
-    height: 400px; /* Altura fixa */
+}
+
+#title {
+    font-size: 2.5rem; /* Tamanho do título */
+    margin-bottom: 20px; /* Espaço abaixo do título */
+    z-index: 2; /* Garante que o título fique sobreposto às imagens */
 }
 
 #time {
     font-size: 2rem; /* Tamanho do texto */
-    margin-top: 20px; /* Espaço entre o carrossel de imagens e o texto */
-    z-index: 2; /* Garante que o texto fique sobreposto às imagens */
+    margin-top: 20px; /* Espaço entre o título e o tempo */
+    z-index: 2; /* Garante que o texto de tempo fique sobreposto às imagens */
 }
 
 .image-slider {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 400px; /* Define a altura do carrossel de imagens */
     overflow: hidden; /* Esconde qualquer parte da imagem que ultrapasse os limites */
 }
 
 .images {
     display: flex; /* Exibe as imagens em linha */
-    width: 500%; /* Cinco imagens no total */
+    width: 100%;
     height: 100%;
-    animation: slide 25s infinite; /* Animação de transição das imagens */
 }
 
 .images img {
-    width: 20%; /* Cada imagem ocupa 20% do espaço */
+    width: 100%;
     height: 100%;
     object-fit: cover; /* Ajusta as imagens sem distorção */
+    position: absolute;
+    animation: changeImage 25s infinite; /* Animação para alternar as imagens */
 }
 
-/* Animação das imagens alternando */
-@keyframes slide {
-    0% { transform: translateX(0); }
-    20% { transform: translateX(-100%); }
-    40% { transform: translateX(-200%); }
-    60% { transform: translateX(-300%); }
-    80% { transform: translateX(-400%); }
-    100% { transform: translateX(0); }
+.images img:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.images img:nth-child(2) {
+    animation-delay: 5s;
+}
+
+.images img:nth-child(3) {
+    animation-delay: 10s;
+}
+
+.images img:nth-child(4) {
+    animation-delay: 15s;
+}
+
+.images img:nth-child(5) {
+    animation-delay: 20s;
+}
+
+/* Animação para alternar as imagens */
+@keyframes changeImage {
+    0% { opacity: 1; }
+    20% { opacity: 0; }
+    40% { opacity: 0; }
+    60% { opacity: 0; }
+    80% { opacity: 0; }
+    100% { opacity: 1; }
 }
